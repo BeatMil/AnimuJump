@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mario_star.ogg-816da4157d062def99dd18c7ed67f0c9.oggstr"
+
+[deps]
+
+source_file="res://mario_star.ogg"
+dest_files=[ "res://.import/mario_star.ogg-816da4157d062def99dd18c7ed67f0c9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

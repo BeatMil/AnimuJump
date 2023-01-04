@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hadoken01.wav-095659a00b7c0076b090215c03820de6.sample"
+
+[deps]
+
+source_file="res://sfx/hadoken01.wav"
+dest_files=[ "res://.import/hadoken01.wav-095659a00b7c0076b090215c03820de6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

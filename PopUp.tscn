@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://PopUp.gd" type="Script" id=2]
+[ext_resource path="res://pickupCoin2.wav" type="AudioStream" id=3]
+[ext_resource path="res://aww__.wav" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "buy"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "cancel"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="Popup" type="Control"]
+margin_right = 1664.0
+margin_bottom = 896.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0352941, 0.0352941, 0.0352941, 0.890196 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.281
+margin_bottom = 20.128
+custom_fonts/font = ExtResource( 1 )
+text = "Description"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BuyButton" type="Button" parent="."]
+anchor_left = 0.143
+anchor_top = 0.533
+anchor_right = 0.143
+anchor_bottom = 0.533
+margin_left = 0.0479889
+margin_top = 0.431946
+margin_right = 402.048
+margin_bottom = 162.432
+custom_colors/font_color_focus = Color( 0.568627, 0.768627, 0.568627, 1 )
+custom_colors/font_color = Color( 0.341176, 0.764706, 0.337255, 1 )
+custom_colors/font_color_hover = Color( 0.568627, 0.768627, 0.568627, 1 )
+custom_colors/font_color_pressed = Color( 0.341176, 0.764706, 0.337255, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Buy"
+
+[node name="NoButton" type="Button" parent="."]
+anchor_left = 0.857
+anchor_top = 0.533
+anchor_right = 0.857
+anchor_bottom = 0.533
+margin_left = -402.048
+margin_top = 0.431946
+margin_right = -0.0480957
+margin_bottom = 162.432
+custom_colors/font_color_focus = Color( 0.917647, 0.282353, 0.145098, 1 )
+custom_colors/font_color = Color( 0.933333, 0.52549, 0.439216, 1 )
+custom_colors/font_color_hover = Color( 0.917647, 0.282353, 0.145098, 1 )
+custom_colors/font_color_pressed = Color( 0.933333, 0.52549, 0.439216, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "No"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/buy = SubResource( 2 )
+anims/cancel = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_BuyButton_pressed"]
+[connection signal="pressed" from="NoButton" to="." method="_on_NoButton_pressed"]

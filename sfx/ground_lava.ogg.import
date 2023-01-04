@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ground_lava.ogg-2cd3c20f88f7bcc74a43ae0572b2f6d5.oggstr"
+
+[deps]
+
+source_file="res://sfx/ground_lava.ogg"
+dest_files=[ "res://.import/ground_lava.ogg-2cd3c20f88f7bcc74a43ae0572b2f6d5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

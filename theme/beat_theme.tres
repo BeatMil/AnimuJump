@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.552941, 0.905882, 0.54902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.317647, 0.968627, 0.243137, 1 )
+
+[resource]
+ScrollContainer/colors/beat = Color( 0, 0, 0, 1 )
+ScrollContainer/constants/aoeu = 1
+ScrollContainer/styles/bg = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/decrement_pressed = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/icons/increment_pressed = null
+VScrollBar/styles/grabber = SubResource( 1 )
+VScrollBar/styles/grabber_highlight = SubResource( 2 )
+VScrollBar/styles/grabber_pressed = SubResource( 1 )
+VScrollBar/styles/scroll = null

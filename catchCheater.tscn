@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://boss_chole_cry.png" type="Texture" id=1]
+[ext_resource path="res://catchCheater.gd" type="Script" id=2]
+
+[node name="catchCheater" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 64.0
+margin_bottom = 16.0
+rect_scale = Vector2( 26.7361, 31.8348 )
+text = "CHEATER!!"
+
+[node name="BossCholeCry" type="Sprite" parent="."]
+position = Vector2( 1024, 624 )
+scale = Vector2( 3.90625, 1.59375 )
+texture = ExtResource( 1 )
