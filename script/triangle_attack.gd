@@ -42,8 +42,7 @@ func player_peww(force: Vector2) -> void:
 
 func turn_hit_boss_collision():
 	collision_layer = 0b00000000000000000000
-	# collision_mask = 0b00000000101000000000
-	collision_mask = 0b00000000000000000000
+	collision_mask = 0b00000000101000000000
 
 
 func turn_off_collision_for_real_XD(): # wtf is this function name!!

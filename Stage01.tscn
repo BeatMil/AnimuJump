@@ -26,6 +26,7 @@
 [ext_resource path="res://dedExplosion.wav" type="AudioStream" id=24]
 [ext_resource path="res://ground.png" type="Texture" id=25]
 [ext_resource path="res://DedArea2D.gd" type="Script" id=26]
+[ext_resource path="res://krita/jean.png" type="Texture" id=27]
 [ext_resource path="res://krita/default.png" type="Texture" id=28]
 [ext_resource path="res://background3.png" type="Texture" id=29]
 [ext_resource path="res://chole_start.wav" type="AudioStream" id=30]
@@ -35,7 +36,6 @@
 [ext_resource path="res://dollar3.wav" type="AudioStream" id=34]
 [ext_resource path="res://DedMenu.gd" type="Script" id=35]
 [ext_resource path="res://krita/mizugi.png" type="Texture" id=36]
-[ext_resource path="res://krita/mizugi_b.png" type="Texture" id=37]
 [ext_resource path="res://bazooka_bullet.tscn" type="PackedScene" id=38]
 [ext_resource path="res://boss_chole_normal2.png" type="Texture" id=39]
 [ext_resource path="res://boss_chole_afraid.png" type="Texture" id=40]
@@ -1695,7 +1695,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -48, 144 ) ]
+"values": [ Vector2( -64, 144 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../CollisionShape2D:shape:extents")
@@ -1707,7 +1707,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 48, 224 ) ]
+"values": [ Vector2( 32, 224 ) ]
 }
 
 [sub_resource type="Animation" id=64]
@@ -1814,7 +1814,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 37 ) ]
+"values": [ ExtResource( 27 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=75]
@@ -2741,8 +2741,9 @@ __meta__ = {
 
 [node name="Player" type="Sprite" parent="Player"]
 position = Vector2( -48, 128 )
-texture = ExtResource( 51 )
+texture = ExtResource( 27 )
 hframes = 6
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( -48, 192 )
@@ -2834,7 +2835,6 @@ position = Vector2( 8, 32 )
 shape = SubResource( 75 )
 
 [node name="DodgeArea2D" type="Area2D" parent="Player" groups=["dodge"]]
-visible = false
 position = Vector2( -16, 48 )
 collision_layer = 32
 collision_mask = 32
@@ -2844,7 +2844,6 @@ position = Vector2( 8, 0 )
 shape = SubResource( 73 )
 
 [node name="ShootArea2D" type="Area2D" parent="Player"]
-visible = false
 position = Vector2( -48, -256 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ShootArea2D"]
@@ -2957,7 +2956,6 @@ one_shot = true
 position = Vector2( 1120, 336 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 21 )
-frame = 1
 playing = true
 script = ExtResource( 18 )
 

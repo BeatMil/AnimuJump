@@ -22,7 +22,7 @@ var is_ded = false
 var is_skip_cutscene = false
 var is_gurara_fight = false
 var is_smashing_meteo = false
-var is_blocking = false # no use; delete later
+var is_blocking = false
 var is_parrying = false
 var is_dodging = false # prevent blocking while dodging
 var is_victorious = false # stop player actions
@@ -48,18 +48,11 @@ func _ready():
 		position += Vector2(0, -1000)
 		apply_central_impulse(Vector2(0, 1000))
 
-	"""
-	Debug
-	"""
-	# turn_off_player_collision() # Debug
-
 
 func _process(_delta):
 	# AutoWolkBar always update according to AutoWalkTimer
 	$AutoWalkBar.value =  auto_walk_wait_time - $AutoWalkTimer.time_left
 
-
-func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and not can_jump and not is_ded:
 		if $AnimationPlayer.is_playing(): # skip boss_gura_intro cutscene
 			if $AnimationPlayer.current_animation == "boss_gura_intro":
@@ -80,6 +73,10 @@ func _physics_process(_delta):
 				$SpritePlayer.play("block")
 		elif is_smashing_meteo and not is_victorious:
 			play("smash_meteo")
+
+
+func _physics_process(_delta):
+	pass
 
 
 func _integrate_forces(_state):

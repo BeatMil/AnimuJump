@@ -5,6 +5,7 @@
 [ext_resource path="res://font/Code Vein Fonts/DroidSansMono.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://MainMenuStyleBox.tres" type="StyleBox" id=4]
 [ext_resource path="res://background3.png" type="Texture" id=5]
+[ext_resource path="res://krita/jean/jean_look.png" type="Texture" id=6]
 [ext_resource path="res://ItemButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://PopUp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://kaisouko_look_default.png" type="Texture" id=9]
@@ -12,7 +13,6 @@
 [ext_resource path="res://kaisouko_look_2p.png" type="Texture" id=11]
 [ext_resource path="res://PopUpSkin.tscn" type="PackedScene" id=12]
 [ext_resource path="res://openSkinMenu.gd" type="Script" id=13]
-[ext_resource path="res://kaisouko_look_b.png" type="Texture" id=14]
 [ext_resource path="res://bazooka.png" type="Texture" id=16]
 [ext_resource path="res://pickupCoin2.wav" type="AudioStream" id=17]
 [ext_resource path="res://ost/Main_menu_theme.wav" type="AudioStream" id=18]
@@ -325,7 +325,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 
 [sub_resource type="DynamicFont" id=30]
@@ -744,7 +744,7 @@ item_name = "mizugi"
 [node name="ItemButton4" parent="HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 1044.0
 margin_bottom = 1562.0
-icon = ExtResource( 14 )
+icon = ExtResource( 6 )
 price = 5000
 description = "Traditional animu style swimsuit without the best part..."
 item_name = "mizugi_b"
@@ -816,7 +816,7 @@ custom_fonts/font = SubResource( 30 )
 text = "Customize"
 
 [node name="Banner" type="Sprite" parent="."]
-position = Vector2( 976, 208 )
+position = Vector2( 1072, 112 )
 texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Banner"]

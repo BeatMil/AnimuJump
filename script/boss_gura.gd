@@ -13,7 +13,7 @@ const EXPLODE_PARTICLE = preload("res://explodeParticle4.tscn")
 # Config
 export var intro_walk_speed := 2000
 var is_start := false
-var attack_index := 8 # default: 1
+var attack_index := 1 # default: 1
 var tri_attack_force := Vector2(-2500, 800)
 var tri_attack_force2 := Vector2(-2500, 300)
 var tri_attack_force3 := Vector2(-2500, -100)
@@ -241,12 +241,6 @@ func attack_spawner() -> void:
 	if push_player_to_default_pos_count > 3 and $"../Player".linear_velocity.y <= 0:
 		push_player_to_default_pos_count = 0
 		$"../Player".push_without_crash(1200, 0)
-	
-	"""
-	# Debug DELETE SOON
-	"""
-	$AnimationPlayer.play("tri_attacks")
-	return
 
 
 	if attack_index > 36: # honban no kougeki
