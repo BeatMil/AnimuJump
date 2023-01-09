@@ -23,6 +23,7 @@ var rng = RandomNumberGenerator.new()
 var learn_big_laser := 0 # Let player learn blue laser 2 times then spawn red
 var had_laugh := 0 # laugh before using big_laser then no laugh
 var push_player_to_default_pos_count = 0
+var tri_attack_count = 0 # do tri_attack every 3rd move
 
 
 func _ready():
@@ -247,9 +248,11 @@ func attack_spawner() -> void:
 		$AnimationPlayer.play("ult_meteo")
 	elif attack_index > 7: # honban no kougeki
 		Data.pass_tutorial = true # player start at phase2
+		tri_attack_count += 1
 
-		if attack_index % 4 == 0: # do tanks every 4th attacks
+		if tri_attack_count >= 3: # do tanks every 4th attacks NEED FIX
 			$AnimationPlayer.play("tri_attacks")
+			tri_attack_count = 0
 			return
 
 		var rand_int = rng.randi_range(1, 5) # big_laser or tri_attack or ult
