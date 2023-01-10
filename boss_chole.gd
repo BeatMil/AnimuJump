@@ -33,6 +33,8 @@ func start():
 	is_start = true
 	linear_velocity = Vector2.ZERO
 	$AnimationPlayer.play("start")
+	$AnimationPlayerOST.play("song")
+	$"../AnimationPlayer".stop()
 	spawn_circles(false)
 
 
@@ -167,4 +169,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_DelayTimer_timeout():
 	emit_signal("ded")
+	$"../AnimationPlayer".play("forest_theme")
 	queue_free()

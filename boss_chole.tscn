@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://boss_chole_normal.png" type="Texture" id=1]
 [ext_resource path="res://boss_chole.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://boss_chole_normal3.png" type="Texture" id=8]
 [ext_resource path="res://boss_chole_normal2.png" type="Texture" id=9]
 [ext_resource path="res://boss_chole_cry.png" type="Texture" id=10]
+[ext_resource path="res://ost/boss_chole.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80, 368 )
@@ -458,6 +459,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
+[sub_resource type="Animation" id=16]
+resource_name = "song"
+length = 11.3
+loop = true
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayerOST")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
 [node name="BossChole" type="RigidBody2D" groups=["boss"]]
 position = Vector2( 384, 368 )
 mode = 2
@@ -504,6 +524,13 @@ volume_db = -9.838
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -9.838
+
+[node name="AnimationPlayerOST" type="AnimationPlayer" parent="."]
+anims/song = SubResource( 16 )
+
+[node name="AudioStreamPlayerOST" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 6.0
 
 [node name="DelayTimer" type="Timer" parent="."]
 wait_time = 0.6

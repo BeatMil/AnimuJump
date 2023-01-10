@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://krita/2p.png" type="Texture" id=1]
 [ext_resource path="res://tank.wav" type="AudioStream" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://smol_jump.wav" type="AudioStream" id=8]
 [ext_resource path="res://Score.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Camera2D.gd" type="Script" id=10]
-[ext_resource path="res://mario_star.ogg" type="AudioStream" id=11]
+[ext_resource path="res://ost/manySago.wav" type="AudioStream" id=11]
 [ext_resource path="res://uncharge.wav" type="AudioStream" id=12]
 [ext_resource path="res://black_bar.png" type="Texture" id=13]
 [ext_resource path="res://white_bar.png" type="Texture" id=14]
@@ -36,6 +36,7 @@
 [ext_resource path="res://dollar3.wav" type="AudioStream" id=34]
 [ext_resource path="res://DedMenu.gd" type="Script" id=35]
 [ext_resource path="res://krita/mizugi.png" type="Texture" id=36]
+[ext_resource path="res://sfx/parry_yellow_laser.wav" type="AudioStream" id=37]
 [ext_resource path="res://bazooka_bullet.tscn" type="PackedScene" id=38]
 [ext_resource path="res://boss_chole_normal2.png" type="Texture" id=39]
 [ext_resource path="res://boss_chole_afraid.png" type="Texture" id=40]
@@ -1297,9 +1298,13 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
+"stream": ExtResource( 37 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
 "stream": ExtResource( 41 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0, 1 )
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Player:position")
@@ -1311,7 +1316,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -120, 128 ), Vector2( -32, 128 ) ]
+"values": [ Vector2( -64, 128 ), Vector2( -32, 128 ) ]
 }
 
 [sub_resource type="Animation" id=84]
@@ -1409,7 +1414,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ), Color( 0.937255, 0.905882, 0.0980392, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "audio"
-tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/path = NodePath("AudioStreamPlayerM")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1427,8 +1432,12 @@ tracks/1/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 11 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
 } ],
-"times": PoolRealArray( 0, 3.2, 6.4 )
+"times": PoolRealArray( 0, 2.8, 5.6, 8.4 )
 }
 
 [sub_resource type="Animation" id=14]
@@ -2741,7 +2750,7 @@ __meta__ = {
 
 [node name="Player" type="Sprite" parent="Player"]
 position = Vector2( -48, 128 )
-texture = ExtResource( 27 )
+texture = ExtResource( 1 )
 hframes = 6
 frame = 2
 
@@ -2760,8 +2769,15 @@ wait_time = 10.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 46 )
+stream = ExtResource( 11 )
 volume_db = -10.0
+
+[node name="AudioStreamPlayerM" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 11 )
+volume_db = 10.0
+__meta__ = {
+"_editor_description_": "ManySago"
+}
 
 [node name="AudioStreamPlayerS" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 48 )
@@ -2805,7 +2821,7 @@ anims/win_look = SubResource( 91 )
 anims/win_look2 = SubResource( 93 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/AnimationPlayer2"]
-stream = ExtResource( 41 )
+stream = ExtResource( 37 )
 volume_db = -5.323
 
 [node name="CollisionPlayer" type="AnimationPlayer" parent="Player"]

@@ -35,7 +35,7 @@ func _ready():
 		print("===================")
 		# spawn_boss_gura()
 	else:
-#		$AnimationPlayer.play("forest_theme")
+		$AnimationPlayer.play("forest_theme")
 		spawn_sago()
 		# spawn_sago_mob()
 		# spawn_boss_chole()
@@ -123,11 +123,12 @@ func the_end():
 func _on_MobTimer_timeout():
 	spawn_sago()
 	mob_sago_count_helper += 1
-	if mob_sago_count_helper  >= sago_mob_amount:
+	if mob_sago_count_helper >= sago_mob_amount:
 		$MobTimer.stop()
 		$ClearMobTimer.start()
 		$ExplosionTimer.start()
 		mob_sago_count_helper = 0
+		$AnimationPlayer.play("forest_theme")
 	# print("mod_count_helper: %s"%mob_sago_count_helper)
 
 

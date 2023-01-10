@@ -205,6 +205,7 @@ func sago_bounce_up():
 
 
 func mario_star():
+	$"../AnimationPlayer".stop()
 	$AnimationPlayer.play("star")
 	$"../Background/AnimationPlayer".play("mario_star")
 	$"../Mashbar".play("start")
