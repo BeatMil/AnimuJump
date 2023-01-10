@@ -789,6 +789,7 @@ anims/main_idle = SubResource( 14 )
 anims/main_start = SubResource( 13 )
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="KaisoukoLook"]
+visible = false
 shape = SubResource( 21 )
 shape_centered = false
 
