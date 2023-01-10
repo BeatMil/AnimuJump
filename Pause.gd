@@ -34,6 +34,12 @@ func _on_RestartButton_pressed():
 
 func restart():
 	toggle_run_pause()
+
+	# save money
+	Data.money += $"../../Score".score
+	Data.prevent_cheat_money += $"../../Score".score
+	Data.save_game()
+
 	var _ok = get_tree().change_scene("res://Stage01.tscn")
 
 
