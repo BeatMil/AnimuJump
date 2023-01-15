@@ -746,7 +746,7 @@ margin_top = 1044.0
 margin_bottom = 1562.0
 icon = ExtResource( 6 )
 price = 5000
-description = "Traditional animu style swimsuit without the best part..."
+description = "Definately not from very popular gacha game XD"
 item_name = "mizugi_b"
 
 [node name="ItemButton5" parent="HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
