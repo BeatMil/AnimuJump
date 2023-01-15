@@ -244,7 +244,7 @@ func attack_spawner() -> void:
 		$"../Player".push_without_crash(1200, 0)
 
 
-	if attack_index > 36: # honban no kougeki
+	if attack_index > 30: # honban no kougeki
 		$AnimationPlayer.play("ult_meteo")
 	elif attack_index > 7: # honban no kougeki
 		Data.pass_tutorial = true # player start at phase2
