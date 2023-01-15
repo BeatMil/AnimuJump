@@ -14,8 +14,6 @@ func _ready():
 
 	update_money()
 
-	Data.gurara_fight_ded_count = 0 # Reset gurara_fight_ded_count on Mainmenu
-
 
 func update_money():
 	$HBoxContainer/VBoxContainer2/MoneyLabel.text = "$%s"%Data.money

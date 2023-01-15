@@ -41,7 +41,7 @@ func _ready():
 		can_jump = false
 		$CollisionPlayer.play("boss_gura_fight")
 		$AnimationPlayer.play("boss_gura_intro")
-		if Data.gurara_fight_ded_count > 10:
+		if Data.gurara_fight_ded_count > 5:
 			dynamic_difficulty_adjustment = true
 	else:
 		can_jump = true
