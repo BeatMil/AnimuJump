@@ -20,6 +20,9 @@ func _ready():
 	# hide mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
+	# flash customize button
+	Data.flash_customize_button = true
+
 	$ExplosionTimer.wait_time = $ClearMobTimer.wait_time / 2
 	$TotalMoney/Label.text = "$%s"%Data.money
 	sago_index = 1 # reset sago_index after ded

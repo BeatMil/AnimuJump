@@ -8,6 +8,7 @@ var is_bazooka = false
 var can_skip_boss_gura_cutscene = true # default: false
 var pass_tutorial = false
 var gurara_fight_ded_count = 0
+var flash_customize_button = false
 
 const save_path = "user://savegame.save"
 
