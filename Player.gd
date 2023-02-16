@@ -137,6 +137,7 @@ func set_parry(_bool: bool) -> void:
 func _on_Player_body_entered(body):
 	if body.is_in_group("Ground"):
 		is_on_ground = true
+		playSprite("normal")
 	elif body.is_in_group("tri_attack"):
 		pass
 		# $"%Camera2D".play2("big_hit")
@@ -274,6 +275,7 @@ func jump():
 	apply_central_impulse(Vector2(0, -jump_power))
 	release_space = false
 	play2("jump")
+	playSprite("jump")
 	spawn_jump_particle()
 
 

@@ -118,6 +118,9 @@ _global_script_class_icons={
 
 config/name="animuJump"
 run/main_scene="res://MainMenu.tscn"
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://logo.png"
 config/windows_native_icon="res://logo.ico"
 
@@ -134,8 +137,10 @@ first_button/label="Best game engine XD"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 window/size/test_width=1280
 window/size/test_height=720
+window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 window/size/always_on_top.editor=true
@@ -152,6 +157,10 @@ enabled=PoolStringArray( "res://addons/godot_editor_discord_presence/plugin.cfg"
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+
+[global]
+
+fps=false
 
 [input]
 

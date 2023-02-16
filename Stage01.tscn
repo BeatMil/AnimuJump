@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=139 format=2]
 
 [ext_resource path="res://krita/2p.png" type="Texture" id=1]
 [ext_resource path="res://tank.wav" type="AudioStream" id=2]
@@ -27,7 +27,6 @@
 [ext_resource path="res://ground.png" type="Texture" id=25]
 [ext_resource path="res://DedArea2D.gd" type="Script" id=26]
 [ext_resource path="res://krita/jean.png" type="Texture" id=27]
-[ext_resource path="res://krita/default.png" type="Texture" id=28]
 [ext_resource path="res://background3.png" type="Texture" id=29]
 [ext_resource path="res://chole_start.wav" type="AudioStream" id=30]
 [ext_resource path="res://bazooka.png" type="Texture" id=31]
@@ -51,6 +50,7 @@
 [ext_resource path="res://sfx/hadoken01.wav" type="AudioStream" id=49]
 [ext_resource path="res://ost/forestSong.wav" type="AudioStream" id=50]
 [ext_resource path="res://krita/kyou.png" type="Texture" id=51]
+[ext_resource path="res://krita/default2.png" type="Texture" id=52]
 
 [sub_resource type="Gradient" id=88]
 offsets = PoolRealArray( 1 )
@@ -617,6 +617,46 @@ tracks/4/keys = {
 "stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=96]
+resource_name = "jump"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -48, 128 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
 }
 
 [sub_resource type="Animation" id=48]
@@ -1777,6 +1817,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( -48, 128 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Player:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
 
 [sub_resource type="Animation" id=63]
 resource_name = "default"
@@ -1791,7 +1843,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 28 ) ]
+"values": [ ExtResource( 52 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Player:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
 }
 
 [sub_resource type="Animation" id=66]
@@ -2702,6 +2766,7 @@ z_index = -20
 texture = ExtResource( 29 )
 
 [node name="Ground" type="StaticBody2D" parent="." groups=["Ground"]]
+modulate = Color( 0.760784, 0.631373, 0.921569, 1 )
 position = Vector2( 1312, 912 )
 collision_layer = 2057
 collision_mask = 2057
@@ -2749,8 +2814,8 @@ __meta__ = {
 }
 
 [node name="Player" type="Sprite" parent="Player"]
-position = Vector2( -48, 128 )
-texture = ExtResource( 1 )
+position = Vector2( -32, 128 )
+texture = ExtResource( 52 )
 hframes = 6
 frame = 2
 
@@ -2769,7 +2834,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 11 )
+stream = ExtResource( 46 )
 volume_db = -10.0
 
 [node name="AudioStreamPlayerM" type="AudioStreamPlayer" parent="Player"]
@@ -2791,6 +2856,7 @@ anims/RESET = SubResource( 41 )
 anims/block = SubResource( 72 )
 anims/block_10f = SubResource( 95 )
 anims/dodge = SubResource( 74 )
+anims/jump = SubResource( 96 )
 anims/look = SubResource( 48 )
 anims/normal = SubResource( 43 )
 anims/parry = SubResource( 76 )
@@ -2821,7 +2887,7 @@ anims/win_look = SubResource( 91 )
 anims/win_look2 = SubResource( 93 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/AnimationPlayer2"]
-stream = ExtResource( 37 )
+stream = ExtResource( 8 )
 volume_db = -5.323
 
 [node name="CollisionPlayer" type="AnimationPlayer" parent="Player"]
@@ -2972,6 +3038,7 @@ one_shot = true
 position = Vector2( 1120, 336 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 script = ExtResource( 18 )
 
