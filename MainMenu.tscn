@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://kaisouko_look.png" type="Texture" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
@@ -13,12 +13,15 @@
 [ext_resource path="res://kaisouko_look_2p.png" type="Texture" id=11]
 [ext_resource path="res://PopUpSkin.tscn" type="PackedScene" id=12]
 [ext_resource path="res://openSkinMenu.gd" type="Script" id=13]
+[ext_resource path="res://script/LabelFullscreen.gd" type="Script" id=14]
+[ext_resource path="res://sprite/Xbutton.png" type="Texture" id=15]
 [ext_resource path="res://bazooka.png" type="Texture" id=16]
 [ext_resource path="res://pickupCoin2.wav" type="AudioStream" id=17]
 [ext_resource path="res://ost/Main_menu_theme.wav" type="AudioStream" id=18]
 [ext_resource path="res://font/Code Vein Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://theme/beat_theme.tres" type="Theme" id=20]
 [ext_resource path="res://krita/kyou/kyou_look.png" type="Texture" id=21]
+[ext_resource path="res://sprite/Xbutton_red.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -700,6 +703,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
+[sub_resource type="DynamicFont" id=35]
+size = 24
+font_data = ExtResource( 3 )
+
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -925,7 +932,24 @@ stream = ExtResource( 18 )
 volume_db = -3.0
 autoplay = true
 
+[node name="LabelFullscreen" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 35 )
+text = "F4 to toogle fullscreen"
+script = ExtResource( 14 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 22 )
+
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="KaisoukoLook/TouchScreenButton" to="PopupSkin" method="_on_TouchScreenButton_pressed"]
 [connection signal="pressed" from="KaisoukoLook/Button" to="PopupSkin" method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

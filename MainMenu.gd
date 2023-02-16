@@ -30,3 +30,7 @@ func _on_ItemButton_pressed():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$HBoxContainer/VBoxContainer2/MoneyLabel/AnimationPlayer.play("shining")
 	$Banner/AnimationPlayer.play("start")
+
+
+func _on_TextureButton_pressed():
+	get_tree().quit()
