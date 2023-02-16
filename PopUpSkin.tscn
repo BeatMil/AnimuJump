@@ -2,7 +2,7 @@
 
 [ext_resource path="res://PopUpSkin.gd" type="Script" id=1]
 [ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://kaisouko_look_2p.png" type="Texture" id=3]
+[ext_resource path="res://krita/school/school_look.png" type="Texture" id=3]
 [ext_resource path="res://kaisouko_look.png" type="Texture" id=4]
 [ext_resource path="res://kaisouko_look_default.png" type="Texture" id=5]
 [ext_resource path="res://skinButton.gd" type="Script" id=6]
