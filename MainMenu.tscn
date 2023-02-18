@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://kaisouko_look.png" type="Texture" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://PopUp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://kaisouko_look_default.png" type="Texture" id=9]
 [ext_resource path="res://banner.png" type="Texture" id=10]
-[ext_resource path="res://kaisouko_look_2p.png" type="Texture" id=11]
 [ext_resource path="res://PopUpSkin.tscn" type="PackedScene" id=12]
 [ext_resource path="res://openSkinMenu.gd" type="Script" id=13]
 [ext_resource path="res://script/LabelFullscreen.gd" type="Script" id=14]
@@ -792,7 +791,7 @@ size_flags_vertical = 3
 
 [node name="ItemButton2" parent="HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_bottom = 518.0
-icon = ExtResource( 11 )
+icon = ExtResource( 23 )
 price = 5000
 description = "Another skin that dev think is nice."
 item_name = "2p"
