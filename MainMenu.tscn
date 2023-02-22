@@ -793,7 +793,7 @@ size_flags_vertical = 3
 margin_bottom = 518.0
 icon = ExtResource( 23 )
 price = 5000
-description = "Another skin that dev think is nice."
+description = "From dev favorite harem animu XD"
 item_name = "2p"
 
 [node name="ItemButton3" parent="HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
@@ -817,7 +817,7 @@ margin_top = 1566.0
 margin_bottom = 2084.0
 icon = ExtResource( 21 )
 price = 5000
-description = "That's pretty good"
+description = "Definately not from one of the less popular asmr channel XD"
 item_name = "2p_b"
 
 [node name="ItemButton6" parent="HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]

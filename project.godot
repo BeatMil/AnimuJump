@@ -118,11 +118,8 @@ _global_script_class_icons={
 
 config/name="animuJump"
 run/main_scene="res://MainMenu.tscn"
-boot_splash/show_image=false
-boot_splash/fullsize=false
-boot_splash/use_filter=false
 config/icon="res://logo.png"
-config/windows_native_icon="res://logo.ico"
+config/windows_native_icon="res://logo2.ico"
 
 [autoload]
 
